@@ -1,0 +1,48 @@
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  margin-left: 40px;
+  margin-right: 40px;
+
+}
+.column {
+  -ms-flex: 10%; /* IE10 */
+  flex: 10%;
+  max-width: 15%;
+  padding: 0 3px;
+
+  .large {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .small {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 48%;
+    border-radius: 10px;
+    margin-right: 2px;
+  }
+}
+.row .column a:hover img {
+  transform: scale(0.975);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
