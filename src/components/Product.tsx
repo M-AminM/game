@@ -11,6 +11,7 @@ const Product = () => {
             <h2>{product[0].title}</h2>
             <p>{product[0].about}</p>
             <img src={product[0].image} alt=""/>
+            <button id={product[0].title}  className="addToOrder" role="button">Add To Orders</button>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import {motion} from "framer-motion";
 import {useEffect, useRef, useState} from "react";
-import images from './Images';
 import { Link } from "react-router-dom";
+import data from '../data.json';
 
 const Home = () => {
 
@@ -11,6 +11,13 @@ const Home = () => {
     useEffect(() => {
         setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
     }, []);
+
+    let images: { name: string; title: string; about: string; image: string; id: number; }[] = [];
+
+    let game = data.map(game => game);
+    for(let i = 0; i < 6; i++) {
+        images.push({name: game[i].name, title: game[i].title, about: game[i].about, image: game[i].image, id: game[i].id})
+    }
 
     return(
         <div>
