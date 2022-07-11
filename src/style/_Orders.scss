@@ -1,0 +1,27 @@
+.orders {
+  color: white;
+
+  width: 20rem;
+  height: 80%;
+
+  h2{
+    padding: 1rem 2rem 0 1rem;
+  }
+}
+.order {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem 1rem 1rem ;
+  cursor: pointer;
+  .order-image {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+  }
+  .order-name {
+    padding-left: 1rem;
+  }
+}
+.no-order {
+  align-content: center;
+}

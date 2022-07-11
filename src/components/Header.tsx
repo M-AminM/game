@@ -9,6 +9,7 @@ const Header = ({info}: Props) => {
             <Link to="/">Home</Link>
             <Link to="/games">Games</Link>
             <Link to="/signupOrLogin">Signup Or Login</Link>
+            <Link to="/orders">Orders</Link>
             <div className="info">{info}</div>
         </div>
     )

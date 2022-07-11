@@ -6,42 +6,48 @@ import Product from "./components/Product";
 import SignupOrLogin from "./components/SignupOrLogin";
 import './style/style.scss';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Orders from "./components/Orders";
 
 
 function App() {
 
     const isLogin: boolean = false;
     const [info, setInfo] = useState("");
+    const [orderStatus, setOrderStatus] = useState(false);
+
+    let order: { name: any; }[] = [];
 
     console.log(info);
 
   return (
     <div className="App">
         <BrowserRouter>
+            <Header info={info}/>
             <Switch>
                 <Route exact path="/" render={() =>
                     <>
-                        <Header info={info}/>
                         <Home />
                     </>
                 }/>
                 <Route path="/games" render={() =>
                     <>
-                        <Header info={info}/>
                         <Games />
                     </>
                 }/>
                 <Route path="/signupOrLogin" render={() =>
                     <>
-                        <Header info={info}/>
                         <SignupOrLogin isLogin={isLogin} info={info} setInfo={setInfo}/>
                     </>
                 }/>
-
+                <Route path="/orders" render={() =>
+                    <>
+                        <Orders info={info} orderStatus={orderStatus} setOrderStatus={setOrderStatus} order={order}/>
+                    </>
+                }/>
                 <Route path="/:productName" render={() =>
                     <>
-                        <Header info={info}/>
-                        <Product />
+                        <Product info={info} orderStatus={orderStatus} setOrderStatus={setOrderStatus} order={order}/>
+
                     </>
                 }/>
             </Switch>
