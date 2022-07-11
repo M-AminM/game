@@ -14,7 +14,7 @@ const Home = () => {
 
     let images: { name: string; title: string; about: string; image: string; id: number; }[] = [];
 
-    let game = data.map(game => game);
+    let game:any = data.map(game => game);
     for(let i = 0; i < 6; i++) {
         images.push({name: game[i].name, title: game[i].title, about: game[i].about, image: game[i].image, id: game[i].id})
     }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Home from "./components/Home";
 import Games from "./components/Games";
 import Header from "./components/Header";
@@ -9,15 +9,41 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 
 function App() {
+
+    const isLogin: boolean = false;
+    const [info, setInfo] = useState("");
+
+    console.log(info);
+
   return (
     <div className="App">
         <BrowserRouter>
-            <Header />
             <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route path="/games" component={Games}/>
-                <Route path="/signupOrLogin" component={SignupOrLogin}/>
-                <Route path="/:productName" component={Product}/>
+                <Route exact path="/" render={() =>
+                    <>
+                        <Header info={info}/>
+                        <Home />
+                    </>
+                }/>
+                <Route path="/games" render={() =>
+                    <>
+                        <Header info={info}/>
+                        <Games />
+                    </>
+                }/>
+                <Route path="/signupOrLogin" render={() =>
+                    <>
+                        <Header info={info}/>
+                        <SignupOrLogin isLogin={isLogin} info={info} setInfo={setInfo}/>
+                    </>
+                }/>
+
+                <Route path="/:productName" render={() =>
+                    <>
+                        <Header info={info}/>
+                        <Product />
+                    </>
+                }/>
             </Switch>
         </BrowserRouter>
     </div>
