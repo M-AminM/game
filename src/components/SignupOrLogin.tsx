@@ -15,11 +15,10 @@ type UserSubmitForm = {
 };
 type Props = {
     isLogin: boolean;
-    info: string;
     setInfo: (active: string) => void;
 };
 
-const SignupOrLogin = ({isLogin, info, setInfo}: Props) => {
+const SignupOrLogin = ({isLogin, setInfo}: Props) => {
     const validationSchema = Yup.object().shape({
         username: Yup.string()
             .required('Username is required')

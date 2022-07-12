@@ -4,23 +4,22 @@ import React from "react";
 
 type Props = {
     info: string;
-    orderStatus: boolean;
-    setOrderStatus: (active: boolean) => void;
     order: any[];
-
 };
-const Product = ({info, orderStatus, setOrderStatus, order}:Props) => {
+const Product = ({info, order}:Props) => {
 
     const {productName}:any = useParams();
     let product:any = data.filter(game => game.name === productName);
 
 
     const orderHandler = (e:any) => {
-        if(info !== "") {
+        if (info !== "" && order.indexOf(e.currentTarget.id) === -1) {
             order.push(e.currentTarget.id);
             alert(`${e.currentTarget.id + " added to your orders"}`)
+        }else if(order.indexOf(e.currentTarget.id) !== -1){
+            alert(`${e.currentTarget.id + " already added to your orders !"}`)
         }else {
-            alert("You should signup first !")
+            alert("You should login first !")
         }
     }
     return(

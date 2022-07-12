@@ -12,13 +12,12 @@ body {
   box-sizing: border-box;
 }
 
-a:link { text-decoration: none; color: white}
-
-a:visited { text-decoration: none; color: white }
-
-a:hover { text-decoration: none;  color: white}
-
-a:active { text-decoration: none; color: white }
+a {
+  &:hover { text-decoration: none;  color: white }
+  &:active { text-decoration: none; color: white }
+  &:visited { text-decoration: none; color: white }
+  &:link { text-decoration: none; color: white}
+}
 
 img{
   -webkit-animation-name: zoom;

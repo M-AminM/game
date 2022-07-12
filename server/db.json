@@ -5,24 +5,6 @@
       "email": "amin@gmail.com",
       "password": "123456789",
       "id": 1
-    },
-    {
-      "name": "amirrrr",
-      "email": "amir@gmail.com",
-      "password": "123456789",
-      "id": 2
-    },
-    {
-      "name": "AminAAaa",
-      "password": "123456789",
-      "email": "amin@gmail.com",
-      "id": 3
-    },
-    {
-      "name": "AminAAa",
-      "password": "12345678",
-      "email": "amin@gmail.com",
-      "id": 4
     }
   ]
 }

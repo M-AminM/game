@@ -13,11 +13,7 @@ function App() {
 
     const isLogin: boolean = false;
     const [info, setInfo] = useState("");
-    const [orderStatus, setOrderStatus] = useState(false);
-
     let order: { name: any; }[] = [];
-
-    console.log(info);
 
   return (
     <div className="App">
@@ -36,18 +32,17 @@ function App() {
                 }/>
                 <Route path="/signupOrLogin" render={() =>
                     <>
-                        <SignupOrLogin isLogin={isLogin} info={info} setInfo={setInfo}/>
+                        <SignupOrLogin isLogin={isLogin} setInfo={setInfo}/>
                     </>
                 }/>
                 <Route path="/orders" render={() =>
                     <>
-                        <Orders info={info} orderStatus={orderStatus} setOrderStatus={setOrderStatus} order={order}/>
+                        <Orders info={info} order={order}/>
                     </>
                 }/>
                 <Route path="/:productName" render={() =>
                     <>
-                        <Product info={info} orderStatus={orderStatus} setOrderStatus={setOrderStatus} order={order}/>
-
+                        <Product info={info} order={order}/>
                     </>
                 }/>
             </Switch>
