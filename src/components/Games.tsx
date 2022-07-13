@@ -14,7 +14,7 @@ const Games = () => {
             </div>
 
             <div className="column">
-                <Link to="fortnite"><img style={{marginRight: "5px"}} className="small" src={require('../images/small/fortnite.jpg')} alt=""/></Link>
+                <Link to="fortnite"><img className="small" src={require('../images/small/fortnite.jpg')} alt=""/></Link>
                 <Link to="dota2"><img className="small" src={require('../images/small/dota2.jpg')} alt=""/></Link>
                 <Link to="zeroDawn"><img className="small" src={require('../images/small/horizon.jpg')} alt=""/></Link>
                 <Link to="houseFlipper"><img className="small" src={require('../images/small/house-flipper.jpg')} alt=""/></Link>

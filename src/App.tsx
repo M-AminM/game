@@ -17,8 +17,7 @@ function App() {
 
   return (
     <div className="App">
-        <BrowserRouter>
-            <Header info={info}/>
+        <Header info={info}/>
             <Switch>
                 <Route exact path="/" render={() =>
                     <>
@@ -46,7 +45,6 @@ function App() {
                     </>
                 }/>
             </Switch>
-        </BrowserRouter>
     </div>
   );
 }
