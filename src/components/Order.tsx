@@ -2,10 +2,11 @@ import {motion} from "framer-motion";
 
 type Props = {
     game: string;
-    image:any;
+    image:string;
+    order: any[];
 }
 
-const Order = ({game, image}:Props) => {
+const Order = ({game, image, order}:Props) => {
 
     const anim = {
         hidden: {x: 100},
@@ -17,6 +18,15 @@ const Order = ({game, image}:Props) => {
         show: {scale: 1}
     }
 
+    const removeButton = (e:any) => {
+        for(let i = 0; i < order.length; i++) {
+            if(order[i] === e.target.value) {
+                order.splice(i, 1);
+                alert(`${"you remove " + game + " from orders"}`)
+            }
+        }
+    }
+
     return(
         <div className="order">
             <motion.div variants={animImg} initial="hidden" animate="show">
@@ -25,6 +35,9 @@ const Order = ({game, image}:Props) => {
             <motion.div variants={anim} initial="hidden" animate="show">
                 <div className="order-name">{game}</div>
             </motion.div>
+            <motion.button variants={anim} initial="hidden" animate="show" onClick={removeButton} value={game} className="close">
+                RemoveX
+            </motion.button>
         </div>
     )
 }

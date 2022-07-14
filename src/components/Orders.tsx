@@ -19,27 +19,17 @@ const Orders = ({info, order}: Props) => {
         show: {x: 0, transition: {duration: 1, ease: "easeOut", staggerChildren: 1, when: "afterChildren"}}
     }
 
-
     return(
         <div className="orders">
-
-
-
-
-
-
-
-
-
             <h2>{info === "" ?
                 <motion.div variants={anim} initial="hidden" animate="show">
                     <motion.h2 variants={orderAnim} >First</motion.h2>
                     <motion.h2 variants={orderAnim} >you</motion.h2>
-                    <motion.h2 variants={orderAnim} >should login !</motion.h2>
+                    <motion.h2 variants={orderAnim} style={{color: 'red'}}>should login !</motion.h2>
                 </motion.div> : <motion.div variants={anim} initial="hidden" animate="show">Orders</motion.div>}</h2>
             {
                 order.map(game =>
-                    <Order game={game} image={data.filter(image => image.title === game)[0].image}/>
+                    <Order game={game} image={data.filter(image => image.title === game)[0].image} order={order} key={game.id}/>
                 )
             }
         </div>

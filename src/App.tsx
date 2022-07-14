@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Product from "./components/Product";
 import SignupOrLogin from "./components/SignupOrLogin";
 import './style/style.scss';
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import Orders from "./components/Orders";
 
 
